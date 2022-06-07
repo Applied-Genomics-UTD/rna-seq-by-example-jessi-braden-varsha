@@ -5,6 +5,7 @@ cd
 cd scratch/
 
 ## Make git repository
+## Change git repository link to desired repository
 git clone https://github.com/Applied-Genomics-UTD/rna-seq-by-example-jessi-braden-varsha.git
 
 ## Change directory to RNA-seq by example
@@ -31,3 +32,11 @@ tar xzvf golden.genome.tar.gz
 ## Evaluate the FASTA files
 seqkit stats refs/*.fa
 
+## What does the genome file look like?
+
+```sh
+cat refs/genome.fa | head -5
+```
+
+## What is the annotation file?
+cat refs/features.gff | head -5
