@@ -1,3 +1,12 @@
+## Change directory to scratch
+cd scratch/
+
+## Make git repository
+git clone https://github.com/Applied-Genomics-UTD/rna-seq-by-example-jessi-braden-varsha.git
+
+## Change directory to RNA-seq by example
+cd rna-seq-by-example-jessi-braden-varsha
+
 ## Make work directory
 mkdir work
 
