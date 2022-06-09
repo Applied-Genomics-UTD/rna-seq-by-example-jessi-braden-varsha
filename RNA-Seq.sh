@@ -61,7 +61,16 @@ wget -nc http://data.biostarhandbook.com/books/rnaseq/data/golden.reads.tar.gz
 tar zxvf golden.reads.tar.gz
 
 ## Run statistics on reads
-seqkit stats reads/*.fq
+seqkit stats reads/*.fq > read_stats
 
 ## Generate root names with parallel and save to file "ids"
 parallel -j 1 echo {1}_{2} ::: BORED EXCITED ::: 1 2 3 > ids
+
+## Set reference genome
+IDX=refs/genome.fa
+
+## Build the genome index
+hisat2-build $IDX $IDX
+
+## Index the reference with samtools
+samtools faidx $IDX
