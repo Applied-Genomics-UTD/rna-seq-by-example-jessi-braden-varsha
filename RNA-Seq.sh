@@ -45,3 +45,10 @@ cat refs/transcripts.fa | head -5
 
 ## Print out more gene names:
 cat refs/transcripts.fa | grep ">" | head
+
+## Make an index file to download genome into IGV
+samtools faidx refs/genome.fa
+
+## Download features.gff, genome.fa, and genome.fa.fai
+## Upload genome.fa and genome.fa.fai to "Genome" in IGV at the same time
+## Upload features.gff to "Tracks" in IGV
