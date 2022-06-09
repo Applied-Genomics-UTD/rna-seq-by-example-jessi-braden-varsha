@@ -49,7 +49,19 @@ cat refs/transcripts.fa | grep ">" | head
 ## Make an index file to download genome into IGV
 samtools faidx refs/genome.fa
 
-## Give instructions for next part of analyses
+## Give instructions for next part of analysis
 echo "Download features.gff, genome.fa, and genome.fa.fai"
 echo "Upload genome.fa and genome.fa.fai to <Genome> in IGV at the same time"
 echo "Upload features.gff to <Tracks> in IGV"
+
+## Download golden snidget reads
+wget -nc http://data.biostarhandbook.com/books/rnaseq/data/golden.reads.tar.gz
+
+## Unpack reads
+tar zxvf golden.reads.tar.gz
+
+## Run statistics on reads
+seqkit stats reads/*.fq
+
+## Generate root names with parallel and save to file "ids"
+parallel -j 1 echo {1}_{2} ::: BORED EXCITED ::: 1 2 3 > ids
