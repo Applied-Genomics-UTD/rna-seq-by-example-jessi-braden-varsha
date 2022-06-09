@@ -74,3 +74,12 @@ hisat2-build $IDX $IDX
 
 ## Index the reference with samtools
 samtools faidx $IDX
+
+## Create BAM folder
+mkdir -p bam
+
+## Align FASTQ files to the reference genome
+cat ids | parallel "hisat2 -x $IDX -1 reads/{}_R1.fq -2 reads/{}_R2.fq | samtools sort > bam/{}.bam"
+
+## Index each BAM file
+cat ids | parallel  "samtools index bam/{}.bam"
