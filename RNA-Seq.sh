@@ -51,5 +51,5 @@ samtools faidx refs/genome.fa
 
 ## Give instructions for next part of analyses
 echo "Download features.gff, genome.fa, and genome.fa.fai"
-echo "Upload genome.fa and genome.fa.fai to "Genome" in IGV at the same time"
-echo "Upload features.gff to "Tracks" in IGV"
+echo "Upload genome.fa and genome.fa.fai to <Genome> in IGV at the same time"
+echo "Upload features.gff to <Tracks> in IGV"
