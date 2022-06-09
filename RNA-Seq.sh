@@ -30,3 +30,18 @@ tar xzvf golden.genome.tar.gz
 
 ## Evaluate the FASTA files
 seqkit stats refs/*.fa
+
+## What does the genome file look like?
+cat refs/genome.fa | head -5
+
+## What is the annotation file?
+cat refs/features.gff | head -5
+
+## How many exons (approximate count)?
+cat refs/features.gff | grep exon | wc -l
+
+## What do the transcripts look like?
+cat refs/transcripts.fa | head -5
+
+## Print out more gene names:
+cat refs/transcripts.fa | grep ">" | head
