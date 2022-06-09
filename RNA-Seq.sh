@@ -49,6 +49,7 @@ cat refs/transcripts.fa | grep ">" | head
 ## Make an index file to download genome into IGV
 samtools faidx refs/genome.fa
 
-## Download features.gff, genome.fa, and genome.fa.fai
-## Upload genome.fa and genome.fa.fai to "Genome" in IGV at the same time
-## Upload features.gff to "Tracks" in IGV
+## Give instructions for next part of analyses
+echo "Download features.gff, genome.fa, and genome.fa.fai"
+echo "Upload genome.fa and genome.fa.fai to "Genome" in IGV at the same time"
+echo "Upload features.gff to "Tracks" in IGV"
