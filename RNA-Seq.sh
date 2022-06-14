@@ -84,9 +84,6 @@ cat ids | parallel "hisat2 -x $IDX -1 reads/{}_R1.fq -2 reads/{}_R2.fq | samtool
 ## Index each BAM file
 cat ids | parallel  "samtools index bam/{}.bam"
 
-## Install bedGraphToBigWig
-conda install -y ucsc-bedgraphtobigwig
-
 ## Turn each BAM file into bedGraph coverage. The files will have the .bg extension.
 cat ids | parallel "bedtools genomecov -ibam  bam/{}.bam -split -bg  > bam/{}.bg"
 
@@ -102,14 +99,8 @@ featureCounts -p -a refs/features.gff -o counts.txt bam/BORED_?.bam bam/EXCITED_
 ## Show the first five lines of the counts.txt file.
 cat counts.txt | head -5
 
-## Create salmon environment
-conda create -y -n salmon
-
 ## Activate salmon environment
 conda activate salmon
-
-## Install salmon and kallisto
-conda install salmon kallisto parallel
 
 ## Set and export the shortcuts to reference and index.
 export REF=refs/transcripts.fa
@@ -160,12 +151,13 @@ cat ids | combine out1 > counts1.txt
 ## Combine salmon abundances into single count matrix
 cat ids | combine out2 > counts2.txt
 
-## Create a new environment for statistics.
-conda create --name stats python=3.8 -y
-
 ## Activate the stats environment.
 conda activate stats
 
-## Install the statistical packages for rna-seq.
-URL=http://data.biostarhandbook.com/books/rnaseq/code/rnaseq-conda.txt
-curl $URL | xargs conda install -y
+## Download the scripts into the ~/bin folder.
+curl http://data.biostarhandbook.com/books/rnaseq/code/deseq2.r > ~/bin/deseq2.r
+curl http://data.biostarhandbook.com/books/rnaseq/code/edger.r > ~/bin/edger.r
+curl http://data.biostarhandbook.com/books/rnaseq/code/heatmap.r > ~/bin/heatmap.r
+
+## Make them executable
+chmod +x ~/bin/*.r
