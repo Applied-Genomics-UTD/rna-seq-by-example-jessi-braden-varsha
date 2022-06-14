@@ -160,5 +160,12 @@ cat ids | combine out1 > counts1.txt
 ## Combine salmon abundances into single count matrix
 cat ids | combine out2 > counts2.txt
 
-## Install all required packages
-conda install bioconductor-edger bioconductor-deseq2 r-gplots -y
+## Create a new environment for statistics.
+conda create --name stats python=3.8 -y
+
+## Activate the stats environment.
+conda activate stats
+
+## Install the statistical packages for rna-seq.
+URL=http://data.biostarhandbook.com/books/rnaseq/code/rnaseq-conda.txt
+curl $URL | xargs mamba install -y
