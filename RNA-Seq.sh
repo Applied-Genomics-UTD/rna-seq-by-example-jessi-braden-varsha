@@ -66,8 +66,8 @@ seqkit stats reads/*.fq > read_stats
 ## Generate root names with parallel and save to file "ids"
 parallel -j 1 echo {1}_{2} ::: BORED EXCITED ::: 1 2 3 > ids
 
-## Set reference genome
-IDX=refs/genome.fa
+## Set and export reference genome
+export IDX=refs/genome.fa
 
 ## Build the genome index
 hisat2-build $IDX $IDX
@@ -83,3 +83,30 @@ cat ids | parallel "hisat2 -x $IDX -1 reads/{}_R1.fq -2 reads/{}_R2.fq | samtool
 
 ## Index each BAM file
 cat ids | parallel  "samtools index bam/{}.bam"
+
+## Install bedGraphToBigWig
+conda install -y ucsc-bedgraphtobigwig
+
+## Turn each BAM file into bedGraph coverage. The files will have the .bg extension.
+cat ids | parallel "bedtools genomecov -ibam  bam/{}.bam -split -bg  > bam/{}.bg"
+
+## Convert each bedGraph coverage into bigWig coverage. The files will have the .bw extension.
+cat ids | parallel "bedGraphToBigWig bam/{}.bg  ${IDX}.fai bam/{}.bw"
+
+## Give instructions for next portion of analysis
+echo "Download all bigWig files and upload to IGV"
+
+## Run featureCounts for all BAM files
+featureCounts -p -a refs/features.gff -o counts.txt bam/BORED_?.bam bam/EXCITED_?.bam
+
+## Show the first five lines of the counts.txt file.
+cat counts.txt | head -5
+
+## Create salmon environment
+conda create -y -n salmon
+
+## Activate salmon environment
+conda activate salmon
+
+## Install salmon and kallisto
+conda install salmon kallisto parallel
