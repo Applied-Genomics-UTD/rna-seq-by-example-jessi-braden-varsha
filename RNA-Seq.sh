@@ -110,3 +110,55 @@ conda activate salmon
 
 ## Install salmon and kallisto
 conda install salmon kallisto parallel
+
+## Set and export the shortcuts to reference and index.
+export REF=refs/transcripts.fa
+export IDX1=refs/kallisto.idx
+export IDX2=refs/salmon.idx
+
+## Build index with kallisto.
+kallisto index -i ${IDX1} ${REF}
+
+## Build the index with salmon.
+salmon index -t ${REF} -i ${IDX2}
+
+# Kallisto quantification.
+kallisto quant -i ${IDX1} -o BORED_1 reads/BORED_1_R1.fq reads/BORED_1_R2.fq
+
+# Salmon quantification.
+salmon quant -i ${IDX2} -l A --validateMappings -1 reads/BORED_1_R1.fq -2 reads/BORED_1_R2.fq  -o out2/BORED_1
+
+## Check counts
+cat BORED_1/abundance.tsv | head -5
+
+## Create parent directories
+mkdir -p out1 out2
+
+## The name of the index.
+export REF=refs/transcripts.fa
+export IDX1=refs/kallisto.idx
+export IDX2=refs/salmon.idx
+
+## Run Kallisto to classify the reads.
+cat ids | parallel kallisto quant -i ${IDX1} -o out1/{} reads/{}_R1.fq reads/{}_R2.fq
+
+## Run Salmon to classify the reads.
+cat ids | parallel salmon quant -i ${IDX2} -l A --validateMappings -o out2/{} -1 reads/{}_R1.fq -2 reads/{}_R2.fq
+
+## Create bin directory
+mkdir ~/bin
+
+## Download the custom script to combine kallisto or salmon outputs.
+curl http://data.biostarhandbook.com/books/rnaseq/code/combine.py > ~/bin/combine
+
+## Make the script executable.
+chmod +x ~/bin/combine
+
+## Combine kallisto abundances into single count matrix
+cat ids | combine out1 > counts1.txt
+
+## Combine salmon abundances into single count matrix
+cat ids | combine out2 > counts2.txt
+
+## Install all required packages
+conda install bioconductor-edger bioconductor-deseq2 r-gplots -y
