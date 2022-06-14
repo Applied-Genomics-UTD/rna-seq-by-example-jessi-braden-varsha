@@ -168,4 +168,4 @@ conda activate stats
 
 ## Install the statistical packages for rna-seq.
 URL=http://data.biostarhandbook.com/books/rnaseq/code/rnaseq-conda.txt
-curl $URL | xargs mamba install -y
+curl $URL | xargs conda install -y
