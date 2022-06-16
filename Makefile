@@ -1,10 +1,15 @@
 ## Run all commands
-All: Data Unpack
+All: Unpack Summary
 
 ## Download grouchy grinch data
-Data:
+grinch.tar.gz:
 	wget -nc http://data.biostarhandbook.com/rnaseq/data/grinch.tar.gz 
 
 ## Unpack the data
-Unpack:
+Unpack: grinch.tar.gz
 	tar zxvf grinch.tar.gz
+
+## Make data and genome statistics
+Summary:
+	seqkit stats reads/*fq > Reads_Stats
+	seqkit stats refs/grinch-genome.fa > Genome_Stats
