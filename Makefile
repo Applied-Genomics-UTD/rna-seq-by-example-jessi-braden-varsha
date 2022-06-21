@@ -1,5 +1,5 @@
 ## Run all commands
-All: Unpack Summary Index Align
+All: Unpack Summary Index Align Counts
 
 ## Download grouchy grinch data
 grinch.tar.gz:
@@ -27,6 +27,20 @@ Align: ids
 ## Make bam directory
 	mkdir -p bam
 ## Run hisat2 for all samples
-	cat ids | parallel "hisat2 --max-intronlen 2500 -x refs/grinch-genome.fa -U reads/{}.fq  | samtools sort > bam/{}.bam"
+	cat ids | parallel "hisat2 --rna-strandness R --max-intronlen 2500 -x refs/grinch-genome.fa -U reads/{}.fq  | samtools sort > bam/{}.bam"
 ## Create bam index for all files
 	cat ids | parallel samtools index bam/{}.bam
+
+## Generate counts
+Counts:
+## Generate antisense counts
+	featureCounts -s 1 -a refs/grinch-annotations_3.gtf -o counts-anti.txt bam/C*.bam bam/W*.bam
+## Generate sense counts
+	featureCounts -s 2 -a refs/grinch-annotations_3.gtf -o counts-sense.txt bam/C*.bam bam/W*.bam
+
+## Calculate percent coverage
+Coverage:
+## Select the genes from the GTF file.
+	cat refs/grinch-annotations_2.gff | awk '$$3=="gene" { print $$0 }' > genes.gff
+## Compute the coverage of each gene relative to all BAM files
+	bedtools coverage -S -a genes.gff -b bam/*.bam > coverage.txt
