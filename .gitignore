@@ -2,3 +2,9 @@ work/
 reads/
 refs/
 *.gz
+*.bam
+*.log
+*Stats
+ids
+*.bai
+*.json
