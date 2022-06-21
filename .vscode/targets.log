@@ -1,0 +1,319 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.82
+# Built for x86_64-redhat-linux-gnu
+# Copyright (C) 2010  Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Tue Jun 21 10:10:50 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# default
+.SHELLFLAGS := -c
+# environment
+VSCODE_AGENT_FOLDER = /home/vxv210025/.vscode-server
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+MODULEPATH = /opt/ohpc/pub/moduledeps/gnu8-openmpi3:/opt/ohpc/pub/moduledeps/gnu8:/opt/ohpc/pub/modulefiles
+# environment
+LMOD_PREPEND_BLOCK = normal
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+BASH_SILENCE_DEPRECATION_WARNING = 1
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# default
+MAKE_VERSION := 3.82
+# makefile
+CURDIR := /home/vxv210025/github-classroom/Applied-Genomics-UTD/rna-seq-by-example-jessi-braden-varsha
+# makefile
+SHELL = /bin/sh
+# environment
+LMOD_DIR = /opt/ohpc/admin/lmod/lmod/libexec
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# environment
+HISTCONTROL = ignoredups
+# environment
+_ModuleTable002_ = LjAiLFsibG9hZE9yZGVyIl09Myxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0xLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJnbnU4Iix9LG9ocGM9e1siZm4iXT0iL29wdC9vaHBjL3B1Yi9tb2R1bGVmaWxlcy9vaHBjIixbImZ1bGxOYW1lIl09Im9ocGMiLFsibG9hZE9yZGVyIl09NSxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJvaHBjIix9LG9wZW5tcGkzPXtbImZuIl09Ii9vcHQvb2hwYy9wdWIvbW9kdWxlZGVwcy9nbnU4L29wZW5tcGkzLzMuMS40IixbImZ1bGxOYW1lIl09Im9wZW5tcGkzLzMuMS40IixbImxvYWRPcmRlciJdPTQscHJvcFQ9e30sWyJzdGFja0RlcHRoIl09MSxbInN0YXR1cyJd
+# environment
+define BASH_FUNC_ml()
+() {  eval $($LMOD_DIR/ml_cmd "$@")
+}
+endef
+# environment
+LMOD_COLORIZE = no
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+_ModuleTable001_ = X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPWZhbHNlLFsiY19zaG9ydFRpbWUiXT1mYWxzZSxkZXB0aFQ9e30sZmFtaWx5PXtbIk1QSSJdPSJvcGVubXBpMyIsWyJjb21waWxlciJdPSJnbnU4Iix9LG1UPXthdXRvdG9vbHM9e1siZm4iXT0iL29wdC9vaHBjL3B1Yi9tb2R1bGVmaWxlcy9hdXRvdG9vbHMiLFsiZnVsbE5hbWUiXT0iYXV0b3Rvb2xzIixbImxvYWRPcmRlciJdPTEscHJvcFQ9e30sWyJzdGFja0RlcHRoIl09MSxbInN0YXR1cyJdPSJhY3RpdmUiLFsidXNlck5hbWUiXT0iYXV0b3Rvb2xzIix9LGdudTg9e1siZm4iXT0iL29wdC9vaHBjL3B1Yi9tb2R1bGVmaWxlcy9nbnU4LzguMy4wIixbImZ1bGxOYW1lIl09ImdudTgvOC4z
+# environment
+LESSOPEN = ||/usr/bin/lesspipe.sh %s
+# environment
+VSCODE_CWD = /home/vxv210025
+# environment
+LMOD_FULL_SETTARG_SUPPORT = no
+# environment
+SSH_CONNECTION = 10.173.161.77 56315 10.174.247.68 22
+# environment
+PATH = /home/vxv210025/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin/remote-cli:/home/vxv210025/bin:/home/vxv210025/bin:/opt/ohpc/pub/mpi/openmpi3-gnu8/3.1.4/bin:/opt/ohpc/pub/compiler/gcc/8.3.0/bin:/opt/ohpc/pub/utils/prun/1.3:/opt/ohpc/pub/utils/autotools/bin:/opt/ohpc/pub/bin:/home/vxv210025/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/vxv210025/.local/bin:/home/vxv210025/bin
+# environment
+__LMOD_REF_COUNT_PATH = /opt/ohpc/pub/mpi/openmpi3-gnu8/3.1.4/bin:1;/opt/ohpc/pub/compiler/gcc/8.3.0/bin:1;/opt/ohpc/pub/utils/prun/1.3:1;/opt/ohpc/pub/utils/autotools/bin:1;/opt/ohpc/pub/bin:1;/home/vxv210025/bin:1;/usr/local/bin:1;/usr/bin:1;/usr/local/sbin:1;/usr/sbin:1
+# environment
+LMOD_CMD = /opt/ohpc/admin/lmod/lmod/libexec/lmod
+# environment
+QT_GRAPHICSSYSTEM_CHECKED = 1
+# environment
+XDG_RUNTIME_DIR = /run/user/725414
+# environment
+BASH_ENV = /opt/ohpc/admin/lmod/lmod/init/bash
+# environment
+VSCODE_LOG_STACK = false
+# environment
+_ModuleTable003_ = PSJhY3RpdmUiLFsidXNlck5hbWUiXT0ib3Blbm1waTMiLH0scHJ1bj17WyJmbiJdPSIvb3B0L29ocGMvcHViL21vZHVsZWZpbGVzL3BydW4vMS4zIixbImZ1bGxOYW1lIl09InBydW4vMS4zIixbImxvYWRPcmRlciJdPTIscHJvcFQ9e30sWyJzdGFja0RlcHRoIl09MSxbInN0YXR1cyJdPSJhY3RpdmUiLFsidXNlck5hbWUiXT0icHJ1biIsfSx9LG1wYXRoQT17Ii9vcHQvb2hwYy9wdWIvbW9kdWxlZGVwcy9nbnU4LW9wZW5tcGkzIiwiL29wdC9vaHBjL3B1Yi9tb2R1bGVkZXBzL2dudTgiLCIvb3B0L29ocGMvcHViL21vZHVsZWZpbGVzIix9LFsic3lzdGVtQmFzZU1QQVRIIl09Ii9vcHQvb2hwYy9wdWIvbW9kdWxlZmlsZXMiLH0=
+# environment
+LMOD_VERSION = 8.1.18
+# environment
+LMOD_FAMILY_COMPILER = gnu8
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver check-symlink
+# environment
+__LMOD_REF_COUNT_MANPATH = /opt/ohpc/pub/mpi/openmpi3-gnu8/3.1.4/share/man:1;/opt/ohpc/pub/compiler/gcc/8.3.0/share/man:1;/opt/ohpc/pub/utils/autotools/share/man:1;/usr/local/share/man:2;/usr/share/man/overrides:2;/usr/share/man/en:2;/usr/share/man:2
+# automatic
+%F = $(notdir $%)
+# environment
+LMOD_FAMILY_COMPILER_VERSION = 8.3.0
+# environment
+__LMOD_REF_COUNT_LD_LIBRARY_PATH = /opt/ohpc/pub/mpi/openmpi3-gnu8/3.1.4/lib:1;/opt/ohpc/pub/compiler/gcc/8.3.0/lib64:1
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /home/vxv210025/github-classroom/Applied-Genomics-UTD/rna-seq-by-example-jessi-braden-varsha
+# environment
+VSCODE_IPC_HOOK_CLI = /run/user/725414/vscode-ipc-14b4fe63-921d-41c6-9424-d959a6efdba8.sock
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+PKG_CONFIG_PATH = /opt/ohpc/pub/mpi/openmpi3-gnu8/3.1.4/lib/pkgconfig
+# environment
+__LMOD_REF_COUNT_PKG_CONFIG_PATH = /opt/ohpc/pub/mpi/openmpi3-gnu8/3.1.4/lib/pkgconfig:1
+# environment
+MANPATH = /opt/ohpc/pub/mpi/openmpi3-gnu8/3.1.4/share/man:/opt/ohpc/pub/compiler/gcc/8.3.0/share/man:/opt/ohpc/pub/utils/autotools/share/man:/usr/local/share/man:/usr/share/man/overrides:/usr/share/man/en:/usr/share/man
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/vxv210025
+# environment
+LD_LIBRARY_PATH = /opt/ohpc/pub/mpi/openmpi3-gnu8/3.1.4/lib:/opt/ohpc/pub/compiler/gcc/8.3.0/lib64
+# environment
+MODULESHOME = /opt/ohpc/admin/lmod/lmod
+# environment
+LOGNAME = vxv210025
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# automatic
++F = $(notdir $+)
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+HOSTNAME = sysbio.utdallas.edu
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+_ModuleTable_Sz_ = 3
+# environment
+SHLVL = 5
+# environment
+XDG_SESSION_ID = 4622
+# environment
+USER = vxv210025
+# makefile
+.DEFAULT_GOAL := All
+# environment
+INCLUDE = /opt/ohpc/pub/compiler/gcc/8.3.0/include
+# default
+MAKECMDGOALS := all
+# environment
+__LMOD_REF_COUNT_LOADEDMODULES = autotools:1;prun/1.3:1;gnu8/8.3.0:1;openmpi3/3.1.4:1;ohpc:1
+# environment
+LMOD_SETTARG_CMD = :
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+define BASH_FUNC_module()
+() {  eval $($LMOD_CMD bash "$@") && eval $(${LMOD_SETTARG_CMD:-:} -s sh)
+}
+endef
+# default
+MAKE_COMMAND := make
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# environment
+SSH_CLIENT = 10.173.161.77 56315 22
+# environment
+MAIL = /var/spool/mail/vxv210025
+# environment
+LOADEDMODULES = autotools:prun/1.3:gnu8/8.3.0:openmpi3/3.1.4:ohpc
+# environment
+__LMOD_REF_COUNT__LMFILES_ = /opt/ohpc/pub/modulefiles/autotools:1;/opt/ohpc/pub/modulefiles/prun/1.3:1;/opt/ohpc/pub/modulefiles/gnu8/8.3.0:1;/opt/ohpc/pub/moduledeps/gnu8/openmpi3/3.1.4:1;/opt/ohpc/pub/modulefiles/ohpc:1
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+BROWSER = /home/vxv210025/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin/helpers/browser.sh
+# environment
+LMOD_PKG = /opt/ohpc/admin/lmod/lmod
+# environment
+VSCODE_HANDLES_SIGPIPE = true
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+_LMFILES_ = /opt/ohpc/pub/modulefiles/autotools:/opt/ohpc/pub/modulefiles/prun/1.3:/opt/ohpc/pub/modulefiles/gnu8/8.3.0:/opt/ohpc/pub/moduledeps/gnu8/openmpi3/3.1.4:/opt/ohpc/pub/modulefiles/ohpc
+# environment
+LC_ALL = C
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+HISTSIZE = 1000
+# environment
+__LMOD_REF_COUNT_INCLUDE = /opt/ohpc/pub/compiler/gcc/8.3.0/include:1
+# environment
+LMOD_ROOT = /opt/ohpc/admin/lmod
+# environment
+LMOD_SETTARG_FULL_SUPPORT = no
+# environment
+MPI_DIR = /opt/ohpc/pub/mpi/openmpi3-gnu8/3.1.4
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# default
+.RECIPEPREFIX := 
+# environment
+__LMOD_REF_COUNT_MODULEPATH = /opt/ohpc/pub/moduledeps/gnu8-openmpi3:1;/opt/ohpc/pub/moduledeps/gnu8:1;/opt/ohpc/pub/modulefiles:1
+# environment
+LMOD_FAMILY_MPI = openmpi3
+# environment
+LANG = C
+# environment
+VSCODE_EXTHOST_WILL_SEND_SOCKET = true
+# environment
+LMOD_FAMILY_MPI_VERSION = 3.1.4
+# variable set hash-table stats:
+# Load=104/1024=10%, Rehash=0, Collisions=11/126=9%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 66305, inode 3258798528): 10 files, no impossibilities.
+
+# 10 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+Unpack: grinch.tar.gz
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from `Makefile', line 10):
+	tar zxvf grinch.tar.gz
+
+grinch.tar.gz:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from `Makefile', line 6):
+	wget -nc http://data.biostarhandbook.com/rnaseq/data/grinch.tar.gz 
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-16 12:17:43.285328471
+#  File has been updated.
+#  Successfully updated.
+
+Summary:
+#  Implicit rule search has not been done.
+ 
+make: *** No rule to make target `all'.  Stop.
+
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from `Makefile', line 14):
+	seqkit stats reads/*fq > Reads_Stats
+	seqkit stats refs/grinch-genome.fa > Genome_Stats
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+All: Unpack Summary
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=8/1024=1%, Rehash=0, Collisions=1/23=4%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 0 / lookups = 30 / hits = 30
+# # of strcache buffers: 1 (* 8176 B/buffer = 8176 B)
+# strcache used: total = 0 (172) / max = 0 / min = 8176 / avg = 0
+# strcache free: total = 0 (8004) / max = 0 / min = 8176 / avg = 0
+
+# strcache hash-table stats:
+# Load=19/8192=0%, Rehash=0, Collisions=3/30=10%
+# Finished Make data base on Tue Jun 21 10:10:50 2022
+
+ 
