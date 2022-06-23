@@ -61,6 +61,6 @@ Scripts:
 ## Perform differential expression analysis
 Differential:
 ## Run with DESeq2
-	conda run -n stats cat counts.txt | ~/bin/deseq2.r 3x3 > deseq2-results.csv
+	cat counts.txt | conda run -n stats ~/bin/deseq2.r 3x3 > deseq2-results.csv
 ## Run with Edger
-	conda run -n stats cat counts.txt | ~/bin/edger.r 3x3 > edger-results.csv
+	cat counts.txt | conda run -n stats ~/bin/edger.r 3x3 > edger-results.csv
