@@ -1,6 +1,8 @@
-## Load required environments
+## Ensure required environments are installed
+anaconda3
+biostars environment (biostars)
+stats environment (stats)
+## Load anaconda 3
 ml load anaconda3
-source activate biostars
-
 ## Run Makefile
 make

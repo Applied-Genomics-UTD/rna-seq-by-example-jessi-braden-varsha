@@ -11,8 +11,8 @@ Unpack: grinch.tar.gz
 
 ## Make data and genome statistics
 Summary:
-	seqkit stats reads/*fq > Reads_Stats
-	seqkit stats refs/grinch-genome.fa > Genome_Stats
+	conda run -n biostars seqkit stats reads/*fq > Reads_Stats
+	conda run -n biostars seqkit stats refs/grinch-genome.fa > Genome_Stats
 
 ## Create ids file
 ids:
@@ -20,16 +20,16 @@ ids:
 
 ## Index genome
 Index:
-	hisat2-build refs/grinch-genome.fa refs/grinch-genome.fa
+	conda run -n biostars hisat2-build refs/grinch-genome.fa refs/grinch-genome.fa
 
 ## Run aligner in parallel
 Align: ids
 ## Make bam directory
 	mkdir -p bam
 ## Run hisat2 for all samples
-	cat ids | parallel "hisat2 --rna-strandness R --max-intronlen 2500 -x refs/grinch-genome.fa -U reads/{}.fq  | samtools sort > bam/{}.bam"
+	cat ids | conda run -n biostars parallel "hisat2 --rna-strandness R --max-intronlen 2500 -x refs/grinch-genome.fa -U reads/{}.fq  | samtools sort > bam/{}.bam"
 ## Create bam index for all files
-	cat ids | parallel samtools index bam/{}.bam
+	cat ids | conda run -n biostars parallel samtools index bam/{}.bam
 
 ## Generate counts
 Counts:
@@ -61,6 +61,6 @@ Scripts:
 ## Perform differential expression analysis
 Differential:
 ## Run with DESeq2
-	cat counts.txt | ~/bin/deseq2.r 3x3 > deseq2-results.csv
+	conda run -n stats cat counts.txt | ~/bin/deseq2.r 3x3 > deseq2-results.csv
 ## Run with Edger
-	cat counts.txt | ~/bin/edger.r 3x3 > edger-results.csv
+	conda run -n stats cat counts.txt | ~/bin/edger.r 3x3 > edger-results.csv
