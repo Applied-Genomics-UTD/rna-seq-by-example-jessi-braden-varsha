@@ -59,7 +59,7 @@ Scripts:
 	chmod +x ~/bin/*.r
 
 ## Perform differential expression analysis
-Differential:
+Differential: Scripts
 ## Run with DESeq2
 	cat counts.txt | conda run -n stats ~/bin/deseq2.r 3x3 > deseq2-results.csv
 ## Run with Edger
