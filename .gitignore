@@ -9,3 +9,5 @@ ids
 *.bai
 *.json
 *.txt*
+*.gff
+*.csv
