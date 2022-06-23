@@ -1,5 +1,5 @@
 ## Run all commands
-All: Unpack Summary Index Align Counts Coverage
+All: Unpack Summary Index Align Counts Coverage Scripts Differential
 
 ## Download grouchy grinch data
 grinch.tar.gz:
