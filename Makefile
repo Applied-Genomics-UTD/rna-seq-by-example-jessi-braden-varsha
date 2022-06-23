@@ -44,3 +44,5 @@ Coverage:
 	cat refs/grinch-annotations_2.gff | awk '$$3=="gene" { print $$0 }' > genes.gff
 ## Compute the coverage of each gene relative to all BAM files
 	bedtools coverage -S -a genes.gff -b bam/*.bam > coverage.txt
+## Sort and store results
+	cat coverage.txt | cut -f 9,13 | tr ";" "\t" | cut -f 1,3 | sort -k2,2rn > tin.txt
