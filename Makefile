@@ -16,7 +16,7 @@ Summary:
 
 ## Create ids file
 ids:
-	parallel echo {1}{2} ::: Cranky Wicked ::: 1 2 3 > ids
+	conda run -n biostars parallel echo {1}{2} ::: Cranky Wicked ::: 1 2 3 > ids
 
 ## Index genome
 Index:
